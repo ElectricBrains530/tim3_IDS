@@ -14,18 +14,18 @@
         "./services": "./src/services/index.ts"
     },
     "dependencies": {
-        "date-fns": "^2.30.0",
-        "lucide-react": "^0.300.0"
+        "date-fns": "^4.1.0",
+        "lucide-react": "^0.545.0"
     },
     "devDependencies": {
         "@kit/eslint-config": "workspace:*",
+        "@kit/shared": "workspace:*",
+        "@kit/supabase": "workspace:*",
         "@kit/tsconfig": "workspace:*",
         "@kit/ui": "workspace:*",
-        "@kit/supabase": "workspace:*",
-        "@kit/shared": "workspace:*",
-        "@types/react": "^18.2.0",
-        "react": "^18.2.0",
-        "typescript": "^5.0.0"
+        "@types/react": "19.2.7",
+        "react": "19.2.1",
+        "typescript": "^5.9.3"
     },
     "prettier": "@kit/prettier-config",
     "typesVersions": {
