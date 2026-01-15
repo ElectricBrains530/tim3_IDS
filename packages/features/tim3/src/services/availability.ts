@@ -1,4 +1,4 @@
-import { SupabaseClient } from '@supabase/supabase-js';
+import type { SupabaseClient } from '@supabase/supabase-js';
 
 // We need to import Database from @kit/supabase/database to get proper typing
 // However, since we haven't generated the types for our new tables yet in the main package,
@@ -19,6 +19,7 @@ export class AvailabilityApi {
     startDate: string; // YYYY-MM-DD
     endDate: string;   // YYYY-MM-DD
   }): Promise<AvailabilityEntry[]> {
+    console.log('[AvailabilityApi] getAvailability params:', params);
     const { data, error } = await this.client
       .from('availability_entries')
       .select('*')
