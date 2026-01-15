@@ -1,6 +1,8 @@
 export type EmploymentStatus = 'Full-time' | 'Part-time' | 'Casual';
 export type AssignmentType = 'Primary' | 'Alternate';
-export type AvailabilityStatus = 'A' | 'D' | 'E' | 'NA'; // Available, Day, Evening, Not Available
+// AvailabilityStatus can be a single code or CSV (e.g. 'D,E'). 
+// usage: status_code: AvailabilityStatus
+export type AvailabilityStatus = 'A' | 'D' | 'E' | 'OS' | 'NA' | string;
 
 export interface ProgramGroup {
     id: string;
