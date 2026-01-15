@@ -127,16 +127,14 @@ INSERT INTO auth.identities (
 ON CONFLICT DO NOTHING;
 
 -- 2. Create Organization (Account)
--- We insert into accounts. Note: memberships trigger might exist or not, we handle manually safe.
-
-INSERT INTO public.accounts (id, name, slug, email, personal_account)
+-- Removed 'slug' column
+-- Changed email to avoid unique constraint conflict with Personal Account
+INSERT INTO public.accounts (id, name, email) 
 VALUES 
 (
     '11111111-1111-1111-1111-111111111111',
     'Tim3 Demo Org',
-    'tim3-demo-org',
-    'admin@tim3.ai',
-    false
+    'contact@tim3.ai' -- Changed from admin@tim3.ai to avoid collision
 )
 ON CONFLICT (id) DO NOTHING;
 
@@ -145,7 +143,7 @@ INSERT INTO public.memberships (account_id, user_id, role)
 VALUES
 ('11111111-1111-1111-1111-111111111111', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11', 'owner'),
 ('11111111-1111-1111-1111-111111111111', 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380b22', 'manager'),
-('11111111-1111-1111-1111-111111111111', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380c33', 'employee') -- FIXED: 'member' is not a valid enum value
+('11111111-1111-1111-1111-111111111111', 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380c33', 'employee')
 ON CONFLICT (account_id, user_id) DO NOTHING;
 
 -- 4. Create Program Groups

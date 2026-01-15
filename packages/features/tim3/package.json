@@ -1,0 +1,38 @@
+{
+    "name": "@features/tim3",
+    "private": true,
+    "version": "0.1.0",
+    "scripts": {
+        "clean": "git clean -xdf .turbo node_modules",
+        "format": "prettier --check \"**/*.{ts,tsx}\"",
+        "lint": "eslint .",
+        "typecheck": "tsc --noEmit"
+    },
+    "exports": {
+        "./types": "./src/types.ts",
+        "./components": "./src/components/index.ts",
+        "./services": "./src/services/index.ts"
+    },
+    "dependencies": {
+        "date-fns": "^2.30.0",
+        "lucide-react": "^0.300.0"
+    },
+    "devDependencies": {
+        "@kit/eslint-config": "workspace:*",
+        "@kit/tsconfig": "workspace:*",
+        "@kit/ui": "workspace:*",
+        "@kit/supabase": "workspace:*",
+        "@kit/shared": "workspace:*",
+        "@types/react": "^18.2.0",
+        "react": "^18.2.0",
+        "typescript": "^5.0.0"
+    },
+    "prettier": "@kit/prettier-config",
+    "typesVersions": {
+        "*": {
+            "*": [
+                "src/*"
+            ]
+        }
+    }
+}
