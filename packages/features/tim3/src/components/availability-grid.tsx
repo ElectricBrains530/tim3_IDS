@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { format } from 'date-fns';
-import { Button } from '@kit/ui/shadcn/button';
-import { useToast } from '@kit/ui/shadcn/sonner';
+import { Button } from '@kit/ui/button';
+import { toast } from '@kit/ui/sonner';
 import { AlertCircle, Check, Copy, Save } from 'lucide-react';
-import { Alert, AlertDescription, AlertTitle } from '@kit/ui/shadcn/alert';
+import { Alert, AlertDescription, AlertTitle } from '@kit/ui/alert';
 
 import { AvailabilityEntry, AvailabilityStatus } from '../types';
 import { getMonthDays, generateCopyWeekEntries } from '../services/date-utils';
@@ -29,7 +29,7 @@ export function AvailabilityGrid({
   const [entries, setEntries] = useState<AvailabilityEntry[]>(initialEntries);
   const [isSaving, setIsSaving] = useState(false);
   const [dirty, setDirty] = useState(false);
-  const { toast } = useToast(); // Assuming standard toaster hook
+
 
   // Generate all days for the month view
   const days = getMonthDays(monthDate);

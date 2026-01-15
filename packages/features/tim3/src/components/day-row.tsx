@@ -1,6 +1,6 @@
 import { format, isSameDay } from 'date-fns';
-import { Badge } from '@kit/ui/shadcn/badge';
-import { Button } from '@kit/ui/shadcn/button';
+import { Badge } from '@kit/ui/badge';
+import { Button } from '@kit/ui/button';
 import { cn } from '@kit/ui/utils';
 
 import { AvailabilityStatus } from '../types';
